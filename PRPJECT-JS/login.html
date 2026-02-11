@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    
+    
+    
+
+<head>
+    
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div id="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            
+            <div class="input-box">
+                <input id="useName" type="text" required>
+                <label>Enter your username</label>
+            </div>
+
+            <div class="input-box">
+                <input id="password" type="password" required>
+                <label>Enter your password</label>
+            </div>
+            
+            <div class="forget">
+                <label for="remember">
+                    <input type="checkbox" id="remember">
+                    <p>Remember me</p>
+                </label>
+                <a >Forgot password?</a>
+            </div>
+
+            <button  id="loginButton" onclick="login(event)" type="submit" >Log In</button>
+            
+            <div class="register">
+                <p>Don't have an account? <a >Register</a></p>
+            </div>
+            
+            
+        </form>
+        
+    </div>
+
+    <script src="login.js"></script>
+  
+    
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="title" placeholder="title"/>
+    <input type="text" id="body" placeholder="body" />
+    <input type="file" id="image" />
+    <button onclick="addData()" >ADD</button>
+
+    <div class="container" id="result"></div>
+
+    <script>
+        async function loadData() {
+
+            let token = localStorage.getItem('token');
+
+            let address = `http://127.0.0.1:5000/get_posts`
+            let res = await fetch(address, {
+                method: 'GET',
+                headers: {
+                    "Authorization": token
+                }
+            });
+            
+            r = ""
+            
+            if(res.status == 200) {
+                
+                let data = await res.json();                
+                data.posts.forEach(d => {                    
+                    r += `<div> <h3>${d.title}</h3> <p>${d.body}</p> <img src="${d.image_url}" /></div>`
+                });                
+            } else {
+                r = "error"
+            }
+
+            document.getElementById('result').innerHTML = r;            
+
+        }
+
+        async function addData() {
+            
+            
+            let n = document.getElementById('title').value;
+            let l = document.getElementById('body').value;
+            let f = document.getElementById('image').files;
+            
+            let token = localStorage.getItem('token');
+
+            let bb = new FormData();
+            bb.append('title', n);
+            bb.append('body', l);
+            bb.append('image', f[0]);
+
+            let address = `http://127.0.0.1:5000/posts`
+            let res = await fetch(address , {
+                method: 'POST',
+                headers: {
+                    "Authorization": token
+                },
+                body: bb
+            });
+            loadData()
+        }
+
+        loadData();
+    </script>
+</body>
+</html>

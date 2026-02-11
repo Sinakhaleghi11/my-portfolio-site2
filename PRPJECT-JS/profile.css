@@ -1,0 +1,473 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    font-family: 'Arial', sans-serif;
+    transition: all 2s;
+}
+
+
+#box {
+    width: 100%;
+    display: flex;
+   
+    gap: 20px;
+   
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-bottom: 80px; /* برای جلوگیری از تداخل با navigation bar */
+}
+
+#res {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* هر ردیف سه پست */
+    gap: 20px;
+}
+
+
+.post_box {
+    
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 60px 10px rgba(106, 105, 105, 0.5);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+ height: 400px;
+    display: flex;
+    flex-direction: column;
+   
+    
+}
+
+.post_box:hover {
+    transform: translateY(-5px);
+height:auto;
+border: 1px solid rgb(148, 8, 8);
+transition: all 2s;
+
+}
+
+.post_box .image_container {
+  width: 100%;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  background: #f0f0f0;
+flex-shrink: 0;
+
+}
+
+.post_box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+  
+}
+
+
+.post_box h3 {
+    margin: 10px;
+    font-size: 18px;
+    color: #333;
+
+}
+
+.post_box p {
+    margin: 0 10px 10px;
+    font-size: 14px;
+    color: #666;
+    word-break: break-all;
+    padding-top: 5px;
+    display: none;
+}
+
+.post_box:hover p {
+    
+    display: block;
+}
+.post_box:hover h3 {
+ color: rgb(172, 11, 11);
+}
+
+
+/* پیام جایگزین برای وقتی تصویر وجود نداره */
+.post-box p.no-image {
+    text-align: center;
+    color: #999;
+    padding: 20px;
+    font-style: italic;
+}
+
+
+/* استایل Navigation Bar */
+.navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(251, 250, 250, 0.9);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -1px 28px rgb(150, 17, 7);
+    z-index: 1000;
+}
+
+body.dark-mode .navbar {
+    background:    rgba(172, 14, 14, 0.9); /* navbar در دارک مود */
+    box-shadow: 0 -6px 10px  rgba(0, 0, 0, 0.9);
+}
+
+.nav-item {
+    color: rgba(172, 14, 14, 0.9);
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+body.dark-mode .nav-item {
+
+    color: #1a1a1a;
+}
+
+.nav-item i {
+    font-size: 20px;
+}
+
+.nav-item:hover {
+    background:  rgba(172, 14, 14, 0.9);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    color: whitesmoke;
+}
+
+body.dark-mode .nav-item:hover {
+    background:whitesmoke;
+    color:  rgba(255, 0, 0, 0.874);
+}
+
+.nav-item.active {
+    background: rgba(172, 14, 14, 0.9);
+    color:   whitesmoke;
+    box-shadow: 0 0 15px  rgba(172, 14, 14, 0.9);
+}
+
+body.dark-mode .nav-item.active {
+    background:     black;
+    color:  rgba(255, 0, 0, 0.874);
+}
+
+body.dark-mode .nav-item.active:hover {
+    background:whitesmoke;
+    color:  rgba(255, 0, 0, 0.874);
+}
+
+
+
+/* استایل دارک مود */
+body.dark-mode {
+    background: 
+    rgb(15, 11, 11); /* پس‌زمینه سیاه */
+    color: whitesmoke; /* فونت قرمز */
+}
+
+
+
+body.dark-mode .post_box {
+    background:   rgba(172, 14, 14, 0.9);
+   box-shadow: 0 2px 60px 10px rgba(213, 10, 10, 0.4);
+}
+
+body.dark-mode .post_box p {
+   color: whitesmoke;
+}
+
+body.dark-mode .post_box:hover {
+    transform: translateY(-5px);
+height:auto;
+border: 1px solid white;
+
+}
+body.dark-mode .image_container{
+    background: black;
+    color: #ff0000;
+}
+
+/* استایل‌های فرم در create.html */
+body.dark-mode #container {
+    background: rgba(0, 0, 0, 0.9);
+    color: #ff0000;
+}
+
+body.dark-mode .post_box h3 {
+    margin: 10px;
+    font-size: 18px;
+    color:whitesmoke;
+
+}
+
+/* استایل‌های دکمه‌ها */
+body.dark-mode button {
+    background: #ff0000;
+    color: #1a1a1a;
+}
+body.dark-mode #username{
+    color: rgb(152, 9, 9);
+}
+.blank{
+    width: 100%;
+    height: 200px;
+    
+    }
+
+
+/* Profile Container */
+.profile-container {
+    max-width: 935px;
+    margin: 80px auto 20px;
+    padding: 0 20px;
+}
+
+/* Profile Header */
+.profile-header {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 0 0 150px;
+    margin-left: 2%;
+    margin-top:-8% ;
+    transition: all 1s;
+}
+
+.profile-pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+   
+
+}
+
+
+.profile-pic img:hover {
+    border: #ff0000 solid 3px;
+   
+}  
+
+
+.profile-pic{
+
+    transform: rotate(360deg)
+}
+
+
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-stats {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.stat {
+    margin-left: 40px;
+    text-align: center;
+}
+
+.stat span:first-child {
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+
+.profile-bio h2 {
+    font-size: 16px;
+    margin: 0;
+    font-weight: bold;
+    margin-left: 11%;
+    
+}
+
+.profile-bio p {
+    margin: 5px 0;
+}
+
+.profile-bio a {
+    color: #00376b;
+    text-decoration: none;
+}
+
+body.dark-mode .profile-bio a {
+    color: white;
+}
+
+.profile-actions {
+   margin-left: 13%;
+}
+
+.profile-actions button {
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.profile-actions button:hover {
+    color:whitesmoke;
+    background-color:   rgba(172, 14, 14, 0.9);
+}
+
+body.dark-mode .profile-actions button {
+    background: whitesmoke;
+    border-color: #555;
+    color: rgb(152, 9, 9);
+}
+
+
+body.dark-mode .profile-actions button:hover {
+    color:rgb(11, 11, 11);
+    background-color:   rgba(172, 14, 14, 0.9);
+}
+/* Highlights */
+.profile-highlights {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+.highlight {
+    text-align: center;
+    margin-left: 20px;
+}
+
+.highlight img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid #dbdbdb;
+    object-fit: cover;
+}
+
+.highlight span {
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Tabs */
+.profile-tabs {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #dbdbdb;
+}
+
+.tab {
+    background: none;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    color: #8e8e8e;
+}
+
+.tab.active {
+    color: #262626;
+    border-top: 1px solid #262626;
+    margin-top: -1px;
+}
+
+body.dark-mode .tab {
+    color: #ff0000;
+}
+
+body.dark-mode .tab.active {
+    color: whitesmoke;
+    border-top-color: #ff0000;
+    background-color: rgba(0, 0, 0, 0.146);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Posts Section */
+#res:empty::before {
+    content: "هنوز پستی وجود ندارد";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    color: #8e8e8e;
+    font-size: 16px;
+}
+
+#res:empty::before::before {
+    content: "\f083";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #8e8e8e;
+}
+
+body.dark-mode #res:empty::before {
+    color: #ff0000;
+}
+
+body.dark-mode #res:empty::before::before {
+    color: #ff0000;
+}
+
+/* Post Grid */
+.post-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+
+.post-box {
+    position: relative;
+    padding-bottom: 100%;
+}
+
+.post-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blank{
+width: 100%;
+height: 100px;
+
+}

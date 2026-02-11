@@ -1,0 +1,227 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    font-family: 'Arial', sans-serif;
+    transition: all 2s;
+}
+
+
+#box {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-bottom: 80px;
+}
+
+#res {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+.post_box {
+
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 60px 10px rgba(106, 105, 105, 0.5);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.post_box:hover {
+    transform: translateY(-5px);
+    height: auto;
+    border: 1px solid rgb(148, 8, 8);
+
+}
+
+.post_box .image_container {
+    width: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    background: #f0f0f0;
+    flex-shrink: 0;
+}
+
+.post_box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+}
+
+.post_box h3 {
+    margin: 10px;
+    font-size: 18px;
+    color: #333;
+
+}
+
+.post_box p {
+    margin: 0 10px 10px;
+    font-size: 14px;
+    color: #666;
+    word-break: break-all;
+    padding-top: 5px;
+    display: none;
+}
+
+.post_box:hover p {
+
+    display: block;
+}
+
+.post_box:hover h3 {
+    color: rgb(172, 11, 11);
+}
+
+
+/* پیام جایگزین برای وقتی تصویر وجود نداره */
+.post-box p.no-image {
+    text-align: center;
+    color: #999;
+    padding: 20px;
+    font-style: italic;
+}
+
+
+/* استایل Navigation Bar */
+.navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(251, 250, 250, 0.9);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -1px 28px rgb(150, 17, 7);
+    z-index: 1000;
+}
+
+body.dark-mode .navbar {
+    background: rgba(172, 14, 14, 0.9);
+    /* navbar در دارک مود */
+    box-shadow: 0 -6px 10px rgba(0, 0, 0, 0.9);
+}
+
+.nav-item {
+    color: rgba(172, 14, 14, 0.9);
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+body.dark-mode .nav-item {
+
+    color: #1a1a1a;
+}
+
+.nav-item i {
+    font-size: 20px;
+}
+
+.nav-item:hover {
+    background: rgba(172, 14, 14, 0.9);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    color: whitesmoke;
+}
+
+body.dark-mode .nav-item:hover {
+    background: whitesmoke;
+    color: rgba(255, 0, 0, 0.874);
+}
+
+.nav-item.active {
+    background: rgba(172, 14, 14, 0.9);
+    color: whitesmoke;
+    box-shadow: 0 0 15px rgba(172, 14, 14, 0.9);
+}
+
+body.dark-mode .nav-item.active {
+    background: black;
+    color: rgba(255, 0, 0, 0.874);
+}
+
+body.dark-mode .nav-item.active:hover {
+    background: whitesmoke;
+    color: rgba(255, 0, 0, 0.874);
+}
+
+
+
+/* استایل دارک مود */
+body.dark-mode {
+    background:
+        rgb(15, 11, 11);
+    /* پس‌زمینه سیاه */
+    color: #ff0000;
+    /* فونت قرمز */
+}
+
+
+
+body.dark-mode .post_box {
+    background: rgba(172, 14, 14, 0.9);
+    box-shadow: 0 2px 60px 10px rgba(213, 10, 10, 0.4);
+}
+
+body.dark-mode .post_box p {
+    color: whitesmoke;
+}
+
+body.dark-mode .post_box:hover {
+    transform: translateY(-5px);
+    height: auto;
+    border: 1px solid white;
+
+}
+
+body.dark-mode .image_container {
+    background: black;
+    color: #ff0000;
+}
+
+/* استایل‌های فرم در create.html */
+body.dark-mode #container {
+    background: rgba(0, 0, 0, 0.9);
+    color: #ff0000;
+}
+
+body.dark-mode .post_box h3 {
+    margin: 10px;
+    font-size: 18px;
+    color: whitesmoke;
+
+}
+
+/* استایل‌های دکمه‌ها */
+body.dark-mode button {
+    background: #ff0000;
+    color: #1a1a1a;
+}
+
+.blank {
+    width: 100%;
+    height: 200px;
+
+}

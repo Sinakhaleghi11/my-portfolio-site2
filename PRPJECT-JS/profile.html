@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.3/Vazirmatn-font-face.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+     <!-- Navigation Bar -->
+   <nav class="navbar">
+
+    <a href="profile.html" class="nav-item">
+        <i class="fas fa-user"></i> my profile
+    </a>
+    <a href="create.html" class="nav-item">
+        <i class="fas fa-plus-circle"></i> create post
+    </a>
+    <a href="posts.html" class="nav-item active">
+        <i class="fas fa-compass"></i> explor
+    </a>
+    <a href="#" class="nav-item" id="theme-toggle">
+        <i class="fas fa-moon"></i> dark mod 
+    </a>
+    <a href="login.html" class="nav-item">
+        <i class="fas fa-sign-in-alt"></i> log in/log out
+    </a>
+</nav>
+
+    <!-- Profile Section -->
+    <div class="profile-container">
+        <!-- Profile Header -->
+        <div class="profile-header">
+           
+            <div class="profile-pic">
+                <div class="profile-bio">
+                    <h2 id="username">@sina khaleghi </h2>
+                   
+                </div>
+                <img src="https://toppng.com/uploads/preview/instagram-default-profile-picture-11562973083brycehrmyv.png" alt="Profile Picture">
+
+                <div class="profile-actions">
+                    <button>edit profile</button>
+                   
+                </div>
+            </div>
+
+            <div class="profile-info">
+                <div class="profile-stats">
+                    <div class="stat">
+                        <span id="post-count">6</span>
+                        <span>posts</span>
+                    </div>
+                    <div class="stat">
+                        <span id="followers-count">100M</span>
+                        <span>follower</span>
+                    </div>
+                    <div class="stat">
+                        <span id="following-count">0</span>
+                        <span>following</span>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+
+    
+
+        <!-- Tabs -->
+        <div class="profile-tabs">
+            <button class="tab active" data-tab="posts"><i class="fas fa-th"></i></button>
+           
+        </div>
+
+        <!-- Posts Section -->
+        <div id="posts-tab" class="tab-content active">
+            <div id="res"></div>
+        </div>
+<div class="blank"></div>
+        
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>
